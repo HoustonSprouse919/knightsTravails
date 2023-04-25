@@ -14,5 +14,14 @@ function createBoard(){
         }
     }
 }
+function createKnight(x,y){
+    if(x==null || y==null){
+        squares[0].knight = true;
+    }else{
+        let index = ((x*8)+y);
+        squares[10].knight= true;
+    }
+}
 createBoard();
+createKnight(1,2);
 console.log(squares)
