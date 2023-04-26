@@ -12,7 +12,7 @@ function moveNode(position,path,traveld){
 function knightsTravalis([x,y],[a,b]){
     let nodeQ = [moveNode([x, y], [[x,y]])];
     let currentNode = nodeQ.shift();
-     while (currentNode.pos[0] !== a || currentNode.pos[1] !== b) {
+     while (currentNode.pos[0] != a || currentNode.pos[1] != b) {
     let moves = [
       [currentNode.pos[0] + 2, currentNode.pos[1] - 1],
       [currentNode.pos[0] + 2, currentNode.pos[1] + 1],
@@ -21,7 +21,7 @@ function knightsTravalis([x,y],[a,b]){
       [currentNode.pos[0] + 1, currentNode.pos[1] - 2],
       [currentNode.pos[0] + 1, currentNode.pos[1] + 2],
       [currentNode.pos[0] - 1, currentNode.pos[1] - 2],
-      [currentNode.pos[0] - 1, currentNode.pos[1] + 2],
+      [currentNode.pos[0] - 1, currentNode.pos[1] + 2]
     ];
            moves.forEach(move => {
            let node = moveNode(move,currentNode.dest.concat([move]));
@@ -31,7 +31,7 @@ function knightsTravalis([x,y],[a,b]){
            });
            currentNode = nodeQ.shift();
      }
-     console.log(`it took the knight ${currentNode.dest.length -1} moves to make it to its destination`)
-     
+     console.log(`it took the knight ${currentNode.dest.length -1} moves to make it to its destination. The path was`)
+     console.log(currentNode.dest)
 }
-knightsTravalis([0,0],[5,5]);
+knightsTravalis([7,0],[2,7]);
