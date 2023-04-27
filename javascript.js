@@ -29,6 +29,7 @@ function knightsTravalis([x,y],[a,b]){
                nodeQ.push(node)
            }
            });
+                      console.log(nodeQ)
            currentNode = nodeQ.shift();
      }
      console.log(`it took the knight ${currentNode.dest.length -1} moves to make it to its destination. The path was`)
